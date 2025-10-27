@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <packageId>tefnut.more.cannons.vanillafied</packageId>
+    <name>More Cannons - Vanillafied</name>
+    <author>ocarina0001, tefnut</author>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <description>Adds more cannons... but vanilla!</description>
+    <loadAfter>
+        <li>brrainz.harmony</li>
+        <li>Ludeon.RimWorld</li>
+        <li>Ludeon.RimWorld.Royalty</li>
+        <li>Ludeon.RimWorld.Ideology</li>
+        <li>Ludeon.RimWorld.Odyssey</li>
+        <li>Ludeon.RimWorld.Biotech</li>
+        <li>Ludeon.RimWorld.Anomaly</li>
+    </loadAfter>
+</ModMetaData>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef Name="TEFNUT_CannonAmmoBase" ParentName="ResourceBase" Abstract="True">
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Standard_Drop</soundDrop>
+        <tickerType>Normal</tickerType>
+        <techLevel>Industrial</techLevel>
+        <tradeTags>
+            <li>Exotic</li>
+        </tradeTags>
+        <stackLimit>75</stackLimit>
+        <statBases>
+            <MaxHitPoints>100</MaxHitPoints>
+            <Mass>1</Mass>
+            <Flammability>1</Flammability>
+            <DeteriorationRate>0.2</DeteriorationRate>
+        </statBases>
+        <intricate>true</intricate>
+        <comps>
+            <li Class="CompProperties_Explosive">
+                <explosiveRadius>1</explosiveRadius>
+                <explosiveDamageType>Bomb</explosiveDamageType>
+                <explosiveExpandPerStackcount>0.2</explosiveExpandPerStackcount>
+                <startWickHitPointsPercent>0.7</startWickHitPointsPercent>
+                <wickTicks>
+                    <min>30</min>
+                    <max>60</max>
+                </wickTicks>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="TEFNUT_CannonAmmoBase">
+        <defName>TEFNUT_FlakCannonAmmo</defName>
+        <label>flak cannon ammo</label>
+        <description>A magazine of 20mm ammunition, meant for the Flak Cannon. Carries 8 shots per magazine.</description>
+        <graphicData>
+            <texPath>Things/Item/Ammo/FlakCannonAmmo</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>57.2</MarketValue>
+        </statBases>
+        <thingCategories>
+            <li>TEFNUT_FlakCannonAmmo</li>
+        </thingCategories>
+        <projectileWhenLoaded>TEFNUT_Bullet_FlakCannon</projectileWhenLoaded>
+    </ThingDef>
+
+    <ThingDef ParentName="TEFNUT_CannonAmmoBase">
+        <defName>TEFNUT_6PoundCannonShell</defName>
+        <label>6-pound cannon shell</label>
+        <description>A 6-pound cannon shell. While the projectile isn't explosive, the propellant is, so keep away from fires.</description>
+        <graphicData>
+            <texPath>Things/Item/Ammo/6PoundCannonAmmo</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>18.7</MarketValue>
+        </statBases>
+        <thingCategories>
+            <li>TEFNUT_6PoundCannonAmmo</li>
+        </thingCategories>
+        <projectileWhenLoaded>TEFNUT_Bullet_6PoundCannon</projectileWhenLoaded>
+    </ThingDef>
+
+    <ThingDef ParentName="TEFNUT_CannonAmmoBase">
+        <defName>TEFNUT_HeavyMortarShell</defName>
+        <label>heavy mortar shell</label>
+        <description>A 150 millimeter mortar shell used in the heavy mortar. It will not fit in a normal mortar.</description>
+        <graphicData>
+            <texPath>Things/Item/Ammo/HeavyMortarAmmo</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>35.5</MarketValue>
+        </statBases>
+        <thingCategories>
+            <li>TEFNUT_HeavyMortarAmmo</li>
+        </thingCategories>
+        <projectileWhenLoaded>TEFNUT_Bullet_HeavyMortar</projectileWhenLoaded>
+    </ThingDef>
+
+    <ThingDef ParentName="TEFNUT_CannonAmmoBase">
+        <defName>TEFNUT_HeavyArtilleryShell</defName>
+        <label>heavy artillery shell</label>
+        <description>A 60 centimeter artillery shell. This could take out a house.</description>
+        <graphicData>
+            <texPath>Things/Item/Ammo/HeavyArtilleryAmmo</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>355.7</MarketValue>
+        </statBases>
+        <thingCategories>
+            <li>TEFNUT_HeavyArtilleryAmmo</li>
+        </thingCategories>
+        <projectileWhenLoaded>TEFNUT_Bullet_HeavyArtillery</projectileWhenLoaded>
+    </ThingDef>
+
+    <ThingDef ParentName="TEFNUT_CannonAmmoBase">
+        <defName>TEFNUT_NavalCannonShell</defName>
+        <label>naval cannon shell</label>
+        <description>10 centimeter shells for a naval cannon.</description>
+        <graphicData>
+            <texPath>Things/Item/Ammo/NavalCannonAmmo</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>31.3</MarketValue>
+        </statBases>
+        <thingCategories>
+            <li>TEFNUT_NavalCannonAmmo</li>
+        </thingCategories>
+        <projectileWhenLoaded>TEFNUT_Bullet_NavalCannon</projectileWhenLoaded>
+    </ThingDef>
+
+    <ThingDef ParentName="TEFNUT_CannonAmmoBase">
+        <defName>TEFNUT_HeavyNavalCannonShell</defName>
+        <label>heavy naval cannon shell</label>
+        <description>12.7 centimeter shells for a heavy naval cannon.</description>
+        <graphicData>
+            <texPath>Things/Item/Ammo/HeavyNavalCannonAmmo</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>58.2</MarketValue>
+        </statBases>
+        <thingCategories>
+            <li>TEFNUT_HeavyNavalCannonAmmo</li>
+        </thingCategories>
+        <projectileWhenLoaded>TEFNUT_Bullet_HeavyNavalCannon</projectileWhenLoaded>
+    </ThingDef>
+
+</Defs>

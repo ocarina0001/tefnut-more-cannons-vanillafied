@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingDef Name="TEFNUT_BaseBullet_Explosive" ParentName="BaseBullet" Abstract="True">
+        <thingClass>Projectile_Explosive</thingClass>
+        <projectile>
+            <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+            <soundExplode>MortarBomb_Explode</soundExplode>
+            <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+            <soundAmbient>MortarRound_Ambient</soundAmbient>
+        </projectile>
+        <graphicData>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+    </ThingDef>
+
+    <ThingDef Name="TEFNUT_BaseBullet_ExplosiveLarge" ParentName="BaseBullet" Abstract="True">
+        <thingClass>Projectile_Explosive</thingClass>
+        <projectile>
+            <soundHitThickRoof>Artillery_HitThickRoof</soundHitThickRoof>
+            <soundExplode>TEFNUT_Big_Explosion</soundExplode>
+            <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
+            <soundAmbient>MortarRound_Ambient</soundAmbient>
+        </projectile>
+        <graphicData>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>TEFNUT_Bullet_FlakCannon</defName>
+        <label>flak cannon bullet</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Small</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>TEFNUT_FlakCannonDamageDef</damageDef>
+            <flyOverhead>false</flyOverhead>
+            <damageAmountBase>12</damageAmountBase>
+            <speed>200</speed>
+        </projectile>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>TEFNUT_Bullet_6PoundCannon</defName>
+        <label>6-pound shell</label>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_Big</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>TEFNUT_6PounderDamageDef</damageDef>
+            <flyOverhead>false</flyOverhead>
+            <damageAmountBase>200</damageAmountBase>
+            <speed>310</speed>
+        </projectile>
+    </ThingDef>
+
+    <ThingDef ParentName="TEFNUT_BaseBullet_Explosive">
+        <defName>TEFNUT_Bullet_HeavyMortar</defName>
+        <label>heavy mortar shell</label>
+        <graphicData>
+            <texPath>Things/Projectile/LargeShell</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+            <drawSize>(2,2)</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>TEFNUT_HeavyMortarDamageDef</damageDef>
+            <flyOverhead>true</flyOverhead>
+            <explosionRadius>4</explosionRadius>
+            <speed>80</speed>
+        </projectile>
+    </ThingDef>
+
+    <ThingDef ParentName="TEFNUT_BaseBullet_ExplosiveLarge">
+        <defName>TEFNUT_Bullet_HeavyArtillery</defName>
+        <label>heavy artillery shell</label>
+        <graphicData>
+            <texPath>Things/Projectile/LargeShell</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+            <drawSize>(4,4)</drawSize>
+        </graphicData>
+        <projectile>
+            <damageDef>TEFNUT_HeavyArtilleryDamageDef</damageDef>
+            <flyOverhead>true</flyOverhead>
+            <explosionRadius>8</explosionRadius>
+            <speed>80</speed>
+        </projectile>
+    </ThingDef>
+
+    <ThingDef ParentName="BaseBullet">
+        <defName>TEFNUT_Bullet_NavalCannon</defName>
+        <label>naval cannon shell</label>
+        <graphicData>
+            <texPath>Things/Projectile/LargeShell</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+            <damageDef>TEFNUT_NavalCannonDamageDef</damageDef>
+            <flyOverhead>false</flyOverhead>
+            <damageAmountBase>360</damageAmountBase>
+            <speed>350</speed>
+        </projectile>
+    </ThingDef>
+
+    <ThingDef ParentName="TEFNUT_BaseBullet_Explosive">
+        <defName>TEFNUT_Bullet_HeavyNavalCannon</defName>
+        <label>heavy naval cannon shell</label>
+        <graphicData>
+            <texPath>Things/Projectile/LargeShell</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <shaderType>TransparentPostLight</shaderType>
+        </graphicData>
+        <projectile>
+            <damageDef>TEFNUT_HeavyNavalCannonDamageDef</damageDef>
+            <flyOverhead>true</flyOverhead>
+            <explosionRadius>2</explosionRadius>
+            <speed>200</speed>
+        </projectile>
+    </ThingDef>
+
+</Defs>

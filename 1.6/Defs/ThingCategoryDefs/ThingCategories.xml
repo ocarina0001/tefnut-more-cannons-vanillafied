@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ThingCategoryDef>
+        <defName>TEFNUT_CannonAmmo</defName>
+        <label>Cannon ammo</label>
+        <parent>Manufactured</parent>
+        <iconPath>UI/Overlays/Ammo</iconPath>
+    </ThingCategoryDef>
+    <ThingCategoryDef>
+        <defName>TEFNUT_FlakCannonAmmo</defName>
+        <label>Flak cannon ammo</label>
+        <parent>TEFNUT_CannonAmmo</parent>
+        <iconPath>UI/Icons/FlakCannon_MenuIcon</iconPath>
+    </ThingCategoryDef>
+    <ThingCategoryDef>
+        <defName>TEFNUT_6PoundCannonAmmo</defName>
+        <label>6-pound cannon ammo</label>
+        <parent>TEFNUT_CannonAmmo</parent>
+        <iconPath>UI/Icons/6PoundCannon_MenuIcon</iconPath>
+    </ThingCategoryDef>
+    <ThingCategoryDef>
+        <defName>TEFNUT_HeavyMortarAmmo</defName>
+        <label>Heavy mortar ammo</label>
+        <parent>TEFNUT_CannonAmmo</parent>
+        <iconPath>UI/Icons/HeavyMortar_MenuIcon</iconPath>
+    </ThingCategoryDef>
+    <ThingCategoryDef>
+        <defName>TEFNUT_HeavyArtilleryAmmo</defName>
+        <label>Heavy artillery ammo</label>
+        <parent>TEFNUT_CannonAmmo</parent>
+        <iconPath>UI/Icons/HeavyArtillery_MenuIcon</iconPath>
+    </ThingCategoryDef>
+    <ThingCategoryDef>
+        <defName>TEFNUT_NavalCannonAmmo</defName>
+        <label>Naval cannon ammo</label>
+        <parent>TEFNUT_CannonAmmo</parent>
+        <iconPath>UI/Icons/NavalCannon_MenuIcon</iconPath>
+    </ThingCategoryDef>
+    <ThingCategoryDef>
+        <defName>TEFNUT_HeavyNavalCannonAmmo</defName>
+        <label>Heavy naval cannon ammo</label>
+        <parent>TEFNUT_CannonAmmo</parent>
+        <iconPath>UI/Icons/HeavyNavalCannon_MenuIcon</iconPath>
+    </ThingCategoryDef>
+</Defs>

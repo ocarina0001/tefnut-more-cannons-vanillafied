@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- ==================== FLAK CANNON ==================== -->
+    <!-- ==================== FLAK CANNON ==================== -->
+    <!-- ==================== FLAK CANNON ==================== -->
+
+    <ThingDef ParentName="TEFNUT_MannedCannonBase">
+        <defName>TEFNUT_Turret_FlakCannon</defName>
+        <label>flak cannon</label>
+        <description>An ancient stationary weapon, consisting of a large flak cannon, originally designed for anti-aircraft usage. Requires 20mm magazines to fire. Its internal ammo rack carries 20 magazines of 8 rounds each, for a total ammo capacity of 160, but may explode when damaged.</description>
+        <graphicData>
+            <texPath>Things/Building/FlakCannon</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(3,3)</drawSize>
+            <damageData>
+                <rect>(0.2,0.2,0.6,0.6)</rect>
+            </damageData>
+            <shadowData>
+                <volume>(1.5,0.35,1.4)</volume>
+                <offset>(0,0,-0.05)</offset>
+            </shadowData>
+        </graphicData>
+        <size>(3,3)</size>
+        <uiIconPath>UI/Icons/FlakCannon_MenuIcon</uiIconPath>
+        <building>
+            <turretGunDef>TEFNUT_Gun_FlakCannon</turretGunDef>
+            <turretTopDrawSize>4</turretTopDrawSize>
+            <turretBurstWarmupTime>0</turretBurstWarmupTime>
+            <turretBurstCooldownTime>0.4</turretBurstCooldownTime>            <!-- Reload Time -->
+        </building>
+        <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+        <specialDisplayRadius>39.9</specialDisplayRadius>
+        <costStuffCount>150</costStuffCount>
+        <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+        <costList>
+            <ComponentIndustrial>1</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <MaxHitPoints>350</MaxHitPoints>
+            <WorkToBuild>2800</WorkToBuild>
+            <Mass>200</Mass>
+        </statBases>
+        <researchPrerequisites>
+            <li>TEFNUT_HeavyEmplacements</li>
+        </researchPrerequisites>
+        <comps>
+            <li Class="CompProperties_Refuelable">
+                <fuelLabel>Ammo magazine</fuelLabel>
+                <fuelGizmoLabel>Ammo</fuelGizmoLabel>
+                <fuelFilter>
+                    <thingDefs>
+                        <li>TEFNUT_FlakCannonAmmo</li>
+                    </thingDefs>
+                </fuelFilter>
+                <fuelCapacity>8</fuelCapacity>
+                <initialFuelPercent>0</initialFuelPercent>
+                <autoRefuelPercent>1</autoRefuelPercent>
+                <showFuelGizmo>true</showFuelGizmo>
+                <minimumFueledThreshold>1</minimumFueledThreshold>
+                <atomicFueling>false</atomicFueling>
+                <fuelMultiplier>1</fuelMultiplier>
+                <factorByDifficulty>false</factorByDifficulty>
+                <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+                <outOfFuelMessage>Cannot shoot: out of ammo</outOfFuelMessage>
+                <fuelIconPath>UI/Overlays/Ammo</fuelIconPath>
+            </li>
+        </comps>
+        <thingCategories>
+            <li>BuildingsSecurity</li>
+        </thingCategories>
+        <minifiedDef>MinifiedThing</minifiedDef>
+    </ThingDef>
+    <ThingDef ParentName="TEFNUT_SingleShellTurret">
+        <defName>TEFNUT_Gun_FlakCannon</defName>
+        <label>flak cannon</label>
+        <description>An ancient stationary weapon, consisting of a large flak cannon, originally designed for anti-aircraft usage. Requires 20mm magazines to fire. Its internal ammo rack carries 20 magazines of 8 rounds each, for a total ammo capacity of 160, but may explode when damaged.</description>
+        <graphicData>
+            <texPath>Things/Building/FlakCannon_Top</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1,1)</drawSize>
+            <drawRotated>true</drawRotated>
+        </graphicData>
+        <statBases>
+            <AccuracyTouch>1</AccuracyTouch>
+            <AccuracyShort>0.98</AccuracyShort>
+            <AccuracyMedium>0.96</AccuracyMedium>
+            <AccuracyLong>0.7</AccuracyLong>
+            <RangedWeapon_Cooldown>0.4</RangedWeapon_Cooldown>
+        </statBases>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>TEFNUT_Bullet_FlakCannon</defaultProjectile>
+                <warmupTime>0</warmupTime>
+                <minRange>1.9</minRange>
+                <range>39.9</range>
+                <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+                <burstShotCount>1</burstShotCount>
+                <soundCast>TEFNUT_Sound_FlakCannon</soundCast>
+                <muzzleFlashScale>20</muzzleFlashScale>
+                <consumeFuelPerShot>0.05</consumeFuelPerShot>
+                <requireLineOfSight>true</requireLineOfSight>
+                <targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
+            </li>
+        </verbs>
+    </ThingDef>
+
+    <!-- ==================== 6 POUND CANNON ==================== -->
+    <!-- ==================== 6 POUND CANNON ==================== -->
+    <!-- ==================== 6 POUND CANNON ==================== -->
+
+    <ThingDef ParentName="TEFNUT_MannedCannonBaseWithShells">
+        <defName>TEFNUT_Turret_6PoundCannon</defName>
+        <label>6-pound cannon</label>
+        <description>Named for the 6 pound shells it fires, this ancient model of cannon has seen new life on rimworlds as an outlander favorite for dealing with centipedes.</description>
+        <graphicData>
+            <texPath>Things/Building/6PoundCannon</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(8,8)</drawSize>
+            <damageData>
+                <rect>(0.38,0.2,0.56375,0.8)</rect>
+                <cornerTL>Damage/Corner</cornerTL>
+            </damageData>
+            <shadowData>
+                <offset>(0,0,0)</offset>
+                <volume>(2,1.5,2)</volume>
+            </shadowData>
+        </graphicData>
+        <uiIconPath>UI/Icons/6PoundCannon_MenuIcon</uiIconPath>
+        <building>
+            <turretGunDef>TEFNUT_Gun_6PoundCannon</turretGunDef>
+            <turretTopDrawSize>8</turretTopDrawSize>
+            <turretBurstWarmupTime>0</turretBurstWarmupTime>
+            <turretBurstCooldownTime>4</turretBurstCooldownTime>            <!-- Reload Time -->
+        </building>
+        <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+        <size>(3,3)</size>
+        <specialDisplayRadius>69.9</specialDisplayRadius>
+        <costStuffCount>300</costStuffCount>
+        <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+        <costList>
+            <ComponentIndustrial>2</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <MaxHitPoints>1500</MaxHitPoints>
+            <WorkToBuild>3500</WorkToBuild>
+            <Mass>200</Mass>
+        </statBases>
+        <researchPrerequisites>
+            <li>TEFNUT_HeavyEmplacements</li>
+        </researchPrerequisites>
+    </ThingDef>
+    <ThingDef ParentName="TEFNUT_MultiShellTurret">
+        <defName>TEFNUT_Gun_6PoundCannon</defName>
+        <label>6-pound cannon</label>
+        <description>Named for the 6 pound shells it fires, this ancient model of cannon has seen new life on rimworlds as an outlander favorite for dealing with centipedes.</description>
+        <statBases>
+            <AccuracyTouch>0.66</AccuracyTouch>
+            <AccuracyShort>0.78</AccuracyShort>
+            <AccuracyMedium>0.9</AccuracyMedium>
+            <AccuracyLong>0.98</AccuracyLong>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Building/6PoundCannon_Top</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1,1)</drawSize>
+            <drawRotated>true</drawRotated>
+        </graphicData>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <warmupTime>0</warmupTime>
+                <minRange>2.9</minRange>
+                <range>69.9</range>
+                <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+                <burstShotCount>1</burstShotCount>
+                <soundCast>TEFNUT_Sound_6PoundCannon</soundCast>
+                <muzzleFlashScale>40</muzzleFlashScale>
+                <requireLineOfSight>true</requireLineOfSight>
+                <targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
+            </li>
+        </verbs>
+        <building>
+            <fixedStorageSettings>
+                <filter>
+                    <categories>
+                        <li>TEFNUT_6PoundCannonAmmo</li>
+                    </categories>
+                </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+                <filter>
+                    <categories>
+                        <li>TEFNUT_6PoundCannonAmmo</li>
+                    </categories>
+                    <disallowedThingDefs>
+                    </disallowedThingDefs>
+                </filter>
+            </defaultStorageSettings>
+        </building>
+    </ThingDef>
+
+    <!-- ==================== HeavyMortar ==================== -->
+    <!-- ==================== HeavyMortar ==================== -->
+    <!-- ==================== HeavyMortar ==================== -->
+
+    <ThingDef ParentName="TEFNUT_MannedCannonBaseWithShells">
+        <defName>TEFNUT_Turret_HeavyMortar</defName>
+        <label>heavy mortar</label>
+        <description>A heavier, powered take on an artillery cannon. While it doesn't have a more portable mortar's versatility in shells, it does have a heavy 150 millimeter payload.</description>
+        <graphicData>
+            <texPath>Things/Building/6PoundCannon</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(7,7)</drawSize>
+            <damageData>
+                <rect>(0.38,0.2,0.56375,0.8)</rect>
+                <cornerTL>Damage/Corner</cornerTL>
+            </damageData>
+            <shadowData>
+                <offset>(0,0,0)</offset>
+                <volume>(2,1.5,2)</volume>
+            </shadowData>
+        </graphicData>
+        <uiIconPath>UI/Icons/HeavyMortar_MenuIcon</uiIconPath>
+        <building>
+            <turretGunDef>TEFNUT_Gun_HeavyMortar</turretGunDef>
+            <turretTopDrawSize>7</turretTopDrawSize>
+            <turretBurstWarmupTime>0</turretBurstWarmupTime>
+            <turretBurstCooldownTime>30</turretBurstCooldownTime>            <!-- Reload Time -->
+            <buildingTags>
+                <li>Artillery_MannedMortar</li>
+            </buildingTags>
+        </building>
+        <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+        <size>(3,3)</size>
+        <specialDisplayRadius>149.9</specialDisplayRadius>
+        <costStuffCount>500</costStuffCount>
+        <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+        <costList>
+            <Plasteel>5</Plasteel>
+            <ComponentIndustrial>3</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <MaxHitPoints>800</MaxHitPoints>
+            <WorkToBuild>4000</WorkToBuild>
+            <Mass>200</Mass>
+        </statBases>
+        <researchPrerequisites>
+            <li>TEFNUT_HeavyEmplacements</li>
+        </researchPrerequisites>
+        <comps>
+            <li Class="CompProperties_Explosive">
+                <wickTicks>240</wickTicks>
+                <explosiveRadius>3</explosiveRadius>
+                <explosiveDamageType>Bomb</explosiveDamageType>
+            </li>
+        </comps>
+        <thingCategories>
+            <li>BuildingsSecurity</li>
+        </thingCategories>
+        <minifiedDef>MinifiedThing</minifiedDef>
+        <placeWorkers>
+            <li>PlaceWorker_NotUnderRoof</li>
+        </placeWorkers>
+    </ThingDef>
+    <ThingDef ParentName="TEFNUT_MultiShellTurret">
+        <defName>TEFNUT_Gun_HeavyMortar</defName>
+        <label>heavy mortar</label>
+        <description>A heavier, powered take on an artillery cannon. While it doesn't have a more portable mortar's versatility in shells, it does have a heavy 150 millimeter payload.</description>
+        <statBases>
+            <AccuracyTouch>0.8</AccuracyTouch>
+            <AccuracyShort>0.8</AccuracyShort>
+            <AccuracyMedium>0.8</AccuracyMedium>
+            <AccuracyLong>0.8</AccuracyLong>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Building/HeavyMortar_Top</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1,1)</drawSize>
+            <drawRotated>true</drawRotated>
+        </graphicData>
+        <weaponTags>
+            <li>Artillery_BaseDestroyer</li>
+        </weaponTags>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <warmupTime>1</warmupTime>
+                <minRange>14.9</minRange>
+                <range>149.9</range>
+                <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+                <burstShotCount>1</burstShotCount>
+                <soundCast>TEFNUT_Sound_HeavyMortar</soundCast>
+                <muzzleFlashScale>120</muzzleFlashScale>
+                <requireLineOfSight>false</requireLineOfSight>
+                <targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
+                <forcedMissRadius>3</forcedMissRadius>
+            </li>
+        </verbs>
+        <building>
+            <fixedStorageSettings>
+                <filter>
+                    <categories>
+                        <li>TEFNUT_HeavyMortarAmmo</li>
+                    </categories>
+                </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+                <filter>
+                    <categories>
+                        <li>TEFNUT_HeavyMortarAmmo</li>
+                    </categories>
+                    <disallowedThingDefs>
+                    </disallowedThingDefs>
+                </filter>
+            </defaultStorageSettings>
+        </building>
+    </ThingDef>
+
+    <!-- ==================== HEAVY ARTILLERY ==================== -->
+    <!-- ==================== HEAVY ARTILLERY ==================== -->
+    <!-- ==================== HEAVY ARTILLERY ==================== -->
+
+    <ThingDef ParentName="TEFNUT_MannedCannonBaseWithShells">
+        <defName>TEFNUT_Turret_HeavyArtillery</defName>
+        <label>heavy artillery</label>
+        <description>A massive artillery emplacement, firing hefty 60 centimeter shells. Ideal for decimating large groups or stationary buildings with extreme prejudice; but the heavy material investment required has ensured it as a rare sight on the rim.</description>
+        <graphicData>
+            <texPath>Things/Building/6PoundCannon</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(14,14)</drawSize>
+            <damageData>
+                <rect>(0.2,0.2,0.6,0.6)</rect>
+                <cornerTL>Damage/Corner</cornerTL>
+            </damageData>
+            <shadowData>
+                <offset>(0,0,0)</offset>
+                <volume>(2,1.5,2)</volume>
+            </shadowData>
+        </graphicData>
+        <uiIconPath>UI/Icons/HeavyArtillery_MenuIcon</uiIconPath>
+        <building>
+            <turretGunDef>TEFNUT_Gun_HeavyArtillery</turretGunDef>
+            <turretTopDrawSize>9</turretTopDrawSize>
+            <turretBurstWarmupTime>0</turretBurstWarmupTime>
+            <turretBurstCooldownTime>100</turretBurstCooldownTime>            <!-- Reload Time -->
+        </building>
+        <interactionCellOffset>(3,0,-4)</interactionCellOffset>
+        <size>(6,6)</size>
+        <specialDisplayRadius>249.9</specialDisplayRadius>
+        <costStuffCount>1600</costStuffCount>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+        <costList>
+            <Plasteel>50</Plasteel>
+            <ComponentIndustrial>10</ComponentIndustrial>
+        </costList>
+        <statBases>
+            <MaxHitPoints>6000</MaxHitPoints>
+            <WorkToBuild>12000</WorkToBuild>
+            <Mass>200</Mass>
+        </statBases>
+        <researchPrerequisites>
+            <li>TEFNUT_BattleshipWeaponry</li>
+        </researchPrerequisites>
+        <comps>
+            <li Class="CompProperties_Explosive">
+                <wickTicks>240</wickTicks>
+                <explosiveRadius>4</explosiveRadius>
+                <explosiveDamageType>Bomb</explosiveDamageType>
+            </li>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>500</basePowerConsumption>
+            </li>
+        </comps>
+        <placeWorkers>
+            <li>PlaceWorker_NotUnderRoof</li>
+        </placeWorkers>
+    </ThingDef>
+    <ThingDef ParentName="TEFNUT_MultiShellTurret">
+        <defName>TEFNUT_Gun_HeavyArtillery</defName>
+        <label>heavy artillery</label>
+        <description>A massive artillery emplacement, firing hefty 60 centimeter shells. Ideal for decimating large groups or stationary buildings with extreme prejudice; but the heavy material investment required has ensured it as a rare sight on the rim.</description>
+        <statBases>
+            <AccuracyTouch>0.8</AccuracyTouch>
+            <AccuracyShort>0.8</AccuracyShort>
+            <AccuracyMedium>0.8</AccuracyMedium>
+            <AccuracyLong>0.8</AccuracyLong>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Building/HeavyArtillery_Top</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1,1)</drawSize>
+            <drawRotated>true</drawRotated>
+        </graphicData>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <warmupTime>1</warmupTime>
+                <minRange>24.9</minRange>
+                <range>399.9</range>
+                <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
+                <burstShotCount>1</burstShotCount>
+                <soundCast>TEFNUT_Sound_HeavyArtillery</soundCast>
+                <soundCastTail>GunTail_Heavy</soundCastTail>
+                <muzzleFlashScale>200</muzzleFlashScale>
+                <requireLineOfSight>false</requireLineOfSight>
+                <targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
+                <forcedMissRadius>4</forcedMissRadius>
+            </li>
+        </verbs>
+        <building>
+            <fixedStorageSettings>
+                <filter>
+                    <categories>
+                        <li>TEFNUT_HeavyArtilleryAmmo</li>
+                    </categories>
+                </filter>
+            </fixedStorageSettings>
+            <defaultStorageSettings>
+                <filter>
+                    <categories>
+                        <li>TEFNUT_HeavyArtilleryAmmo</li>
+                    </categories>
+                    <disallowedThingDefs>
+                    </disallowedThingDefs>
+                </filter>
+            </defaultStorageSettings>
+        </building>
+    </ThingDef>
+
+    <!-- ==================== NAVAL CANNON==================== -->
+    <!-- ==================== NAVAL CANNON ==================== -->
+    <!-- ==================== NAVAL CANNON ==================== -->
+
+    <ThingDef ParentName="TEFNUT_MannedCannonBase">
+        <defName>TEFNUT_Turret_NavalCannon</defName>
+        <label>naval cannon</label>
+        <description>A huge stationary gun that fires 10 centimeter shells, originally designed for use on naval battleships. These designs are common on Imperial gravships for ship-to-ship combat.</description>
+        <graphicData>
+            <texPath>Things/Building/6PoundCannon</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(9, 9)</drawSize>
+            <damageData>
+                <rect>(0.2,0.2,0.6,0.6)</rect>
+            </damageData>
+            <shadowData>
+                <volume>(3.5,2.2,3.5)</volume>
+                <offset>(0,0,0)</offset>
+            </shadowData>
+        </graphicData>
+        <uiIconPath>UI/Icons/NavalCannon_MenuIcon</uiIconPath>
+        <building>
+            <turretGunDef>TEFNUT_Gun_NavalCannon</turretGunDef>
+            <turretTopDrawSize>10</turretTopDrawSize>
+            <turretBurstCooldownTime>1</turretBurstCooldownTime>            <!-- Reload Time -->
+        </building>
+        <interactionCellOffset>(0,0,-3)</interactionCellOffset>
+        <size>(5,5)</size>
+        <specialDisplayRadius>149.9</specialDisplayRadius>
+        <costStuffCount>1000</costStuffCount>
+        <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+        <costList>
+            <Plasteel>50</Plasteel>
+            <ComponentIndustrial>30</ComponentIndustrial>
+            <ComponentSpacer>8</ComponentSpacer>
+        </costList>
+        <statBases>
+            <MaxHitPoints>6000</MaxHitPoints>
+            <WorkToBuild>6500</WorkToBuild>
+            <Mass>200</Mass>
+        </statBases>
+        <researchPrerequisites>
+            <li>TEFNUT_BattleshipWeaponry</li>
+        </researchPrerequisites>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>800</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+            <li Class="CompProperties_Refuelable">
+                <fuelLabel>Ammo belt</fuelLabel>
+                <fuelGizmoLabel>Ammo</fuelGizmoLabel>
+                <fuelFilter>
+                    <thingDefs>
+                        <li>TEFNUT_NavalCannonShell</li>
+                    </thingDefs>
+                </fuelFilter>
+                <fuelCapacity>100</fuelCapacity>
+                <initialFuelPercent>0</initialFuelPercent>
+                <autoRefuelPercent>1</autoRefuelPercent>
+                <showFuelGizmo>true</showFuelGizmo>
+                <minimumFueledThreshold>0</minimumFueledThreshold>
+                <atomicFueling>false</atomicFueling>
+                <fuelMultiplier>1</fuelMultiplier>
+                <factorByDifficulty>false</factorByDifficulty>
+                <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+                <outOfFuelMessage>Cannot shoot: out of ammo</outOfFuelMessage>
+                <fuelIconPath>UI/Overlays/Ammo</fuelIconPath>
+            </li>
+        </comps>
+    </ThingDef>
+    <ThingDef ParentName="TEFNUT_SingleShellTurret">
+        <defName>TEFNUT_Gun_NavalCannon</defName>
+        <label>naval cannon</label>
+        <description>A huge stationary gun that fires 10 centimeter shells, originally designed for use on naval battleships. These designs are common on Imperial gravships for ship-to-ship combat.</description>
+        <statBases>
+            <AccuracyTouch>0.9</AccuracyTouch>
+            <AccuracyShort>0.98</AccuracyShort>
+            <AccuracyMedium>1</AccuracyMedium>
+            <AccuracyLong>1</AccuracyLong>
+            <RangedWeapon_Cooldown>1</RangedWeapon_Cooldown>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Building/NavalCannon_Top</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1,1)</drawSize>
+            <drawRotated>true</drawRotated>
+        </graphicData>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>TEFNUT_Bullet_NavalCannon</defaultProjectile>
+                <warmupTime>0</warmupTime>
+                <minRange>9.9</minRange>
+                <range>149.9</range>
+                <burstShotCount>1</burstShotCount>
+                <soundCast>TEFNUT_Sound_NavalCannon</soundCast>
+                <soundCastTail>GunTail_Heavy</soundCastTail>
+                <muzzleFlashScale>70</muzzleFlashScale>
+                <consumeFuelPerShot>1</consumeFuelPerShot>
+                <targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
+            </li>
+        </verbs>
+    </ThingDef>
+
+
+    <!-- ==================== HEAVY NAVAL CANNON ==================== -->
+    <!-- ==================== HEAVY NAVAL CANNON ==================== -->
+    <!-- ==================== HEAVY NAVAL CANNON ==================== -->
+
+
+    <ThingDef ParentName="TEFNUT_MannedCannonBase">
+        <defName>TEFNUT_Turret_HeavyNavalCannon</defName>
+        <label>heavy naval cannon</label>
+        <description>A massive stationary gun with two heavy barrels, originally designed for use on naval battleships. It requires a clear roof to fire, but can fire over walls. Some pirate gangs equip these 12.7 centimeter monstrosities on gravships and use them to bombard enemies from orbit. It has an 80 round internal ammo storage, which can explode when damaged.</description>
+        <graphicData>
+            <texPath>Things/Building/6PoundCannon</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(11, 11)</drawSize>
+            <damageData>
+                <rect>(0.2,0.2,0.6,0.6)</rect>
+            </damageData>
+            <shadowData>
+                <volume>(3.5,2.2,3.5)</volume>
+                <offset>(0,0,0)</offset>
+            </shadowData>
+        </graphicData>
+        <altitudeLayer>Item</altitudeLayer>
+        <uiIconPath>UI/Icons/HeavyNavalCannon_MenuIcon</uiIconPath>
+        <building>
+            <turretGunDef>TEFNUT_Gun_HeavyNavalCannon</turretGunDef>
+            <turretTopDrawSize>10</turretTopDrawSize>
+            <turretBurstCooldownTime>13.6</turretBurstCooldownTime>            <!-- Reload Time -->
+        </building>
+        <interactionCellOffset>(0,0,-3)</interactionCellOffset>
+        <size>(5,5)</size>
+        <specialDisplayRadius>250</specialDisplayRadius>
+        <costStuffCount>1200</costStuffCount>
+        <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
+        <costList>
+            <Plasteel>60</Plasteel>
+            <ComponentIndustrial>20</ComponentIndustrial>
+            <ComponentSpacer>5</ComponentSpacer>
+        </costList>
+        <statBases>
+            <MaxHitPoints>8500</MaxHitPoints>
+            <WorkToBuild>9000</WorkToBuild>
+            <Mass>200</Mass>
+        </statBases>
+        <researchPrerequisites>
+            <li>TEFNUT_BattleshipWeaponry</li>
+        </researchPrerequisites>
+        <comps>
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>400</basePowerConsumption>
+            </li>
+            <li Class="CompProperties_Flickable"/>
+            <li Class="CompProperties_Refuelable">
+                <fuelLabel>Ammo rack</fuelLabel>
+                <fuelGizmoLabel>Ammo</fuelGizmoLabel>
+                <fuelFilter>
+                    <thingDefs>
+                        <li>TEFNUT_HeavyNavalCannonShell</li>
+                    </thingDefs>
+                </fuelFilter>
+                <fuelCapacity>80</fuelCapacity>
+                <initialFuelPercent>0</initialFuelPercent>
+                <autoRefuelPercent>0.5</autoRefuelPercent>
+                <showFuelGizmo>true</showFuelGizmo>
+                <minimumFueledThreshold>0</minimumFueledThreshold>
+                <atomicFueling>false</atomicFueling>
+                <fuelMultiplier>1</fuelMultiplier>
+                <factorByDifficulty>false</factorByDifficulty>
+                <consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+                <outOfFuelMessage>Cannot shoot: out of ammo</outOfFuelMessage>
+                <fuelIconPath>UI/Overlays/Ammo</fuelIconPath>
+            </li>
+        </comps>
+        <placeWorkers>
+            <li>PlaceWorker_NotUnderRoof</li>
+        </placeWorkers>
+    </ThingDef>
+    <ThingDef ParentName="TEFNUT_SingleShellTurret">
+        <defName>TEFNUT_Gun_HeavyNavalCannon</defName>
+        <label>heavy naval cannon</label>
+        <description>A massive stationary gun with two heavy barrels, originally designed for use on naval battleships. It requires a clear roof to fire, but can fire over walls. Some pirate gangs equip these 12.7 centimeter monstrosities on gravships and use them to bombard enemies from orbit. It has an 80 round internal ammo storage, which can explode when damaged.</description>
+        <statBases>
+            <AccuracyTouch>0.9</AccuracyTouch>
+            <AccuracyShort>0.98</AccuracyShort>
+            <AccuracyMedium>1</AccuracyMedium>
+            <AccuracyLong>1</AccuracyLong>
+            <RangedWeapon_Cooldown>13.6</RangedWeapon_Cooldown>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Building/HeavyNavalCannon_Top</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+            <drawSize>(1,1)</drawSize>
+            <drawRotated>true</drawRotated>
+        </graphicData>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <requireLineOfSight>false</requireLineOfSight>
+                <defaultProjectile>TEFNUT_Bullet_HeavyNavalCannon</defaultProjectile>
+                <warmupTime>3</warmupTime>
+                <minRange>19.9</minRange>
+                <range>249.9</range>
+                <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+                <burstShotCount>2</burstShotCount>
+                <soundCast>TEFNUT_Sound_HeavyNavalCannon</soundCast>
+                <soundCastTail>GunTail_Heavy</soundCastTail>
+                <muzzleFlashScale>100</muzzleFlashScale>
+                <consumeFuelPerShot>1</consumeFuelPerShot>
+                <targetParams>
+                    <canTargetLocations>true</canTargetLocations>
+                </targetParams>
+                <forcedMissRadius>1</forcedMissRadius>
+            </li>
+        </verbs>
+    </ThingDef>
+
+</Defs>

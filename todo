@@ -1,0 +1,12 @@
+converting from amc to mcv, we can;
+- probably scrap all those damage defs, not really useful
+- move designation into security
+- trim research down to 3
+- remove all items, this is an CANNON mod
+- remove cnc stuff, merge ammo into machining table / fabricator
+- simplify cannons
+- simplify ammo
+- fall in line with vanilla practices and standards
+- add automated cannons
+
+in terms of CE, push onto github and wait for someone who knows about CE to build for it

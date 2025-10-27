@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!-- do NOT use this for any actual def, this is purely to be inherited-->
+    <ThingDef Name="TEFNUT_CannonBase" ParentName="BuildingBase" Abstract="True">
+        <thingClass>Building_TurretGun</thingClass>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <designationCategory>Security</designationCategory>
+        <altitudeLayer>Building</altitudeLayer>
+        <hasInteractionCell>True</hasInteractionCell>
+        <stealable>false</stealable>
+        <rotatable>true</rotatable>
+        <passability>PassThroughOnly</passability>
+        <pathCost>50</pathCost>
+        <fillPercent>0.55</fillPercent>
+        <stuffCategories>
+            <li>Metallic</li>
+        </stuffCategories>
+        <tickerType>Normal</tickerType>
+        <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+        <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+        <uiIconScale>1.1</uiIconScale>
+        <placeWorkers>
+            <li>PlaceWorker_TurretTop</li>
+            <li>PlaceWorker_PreventInteractionSpotOverlap</li>
+            <li>PlaceWorker_ShowTurretRadius</li>
+        </placeWorkers>
+        <statBases>
+            <Flammability>0.2</Flammability>
+            <Beauty>-10</Beauty>
+        </statBases>
+        <hasTooltip>true</hasTooltip>
+    </ThingDef>
+
+    <!-- use these for things WITHOUT SHELLS -->
+    <ThingDef Name="TEFNUT_MannedCannonBase" ParentName="TEFNUT_CannonBase" Abstract="True">
+        <comps>
+            <li Class="CompProperties_Forbiddable"/>
+            <li Class="CompProperties_Mannable">
+                <manWorkType>Violent</manWorkType>
+            </li>
+            <li Class="CompProperties_Explosive">
+                <explosiveRadius>3</explosiveRadius>
+                <wickTicks>240</wickTicks>
+                <explosiveDamageType>Bomb</explosiveDamageType>
+            </li>
+        </comps>
+    </ThingDef>
+    <ThingDef Name="TEFNUT_AutomatedCannonBase" ParentName="TEFNUT_CannonBase" Abstract="True">
+        <building>
+            <ai_combatDangerous>true</ai_combatDangerous>
+        </building>
+        <comps>
+            <li Class="CompProperties_Forbiddable"/>
+            <li Class="CompProperties_Flickable"/>
+            <li Class="CompProperties_Breakdownable"/>
+            <li Class="CompProperties_Explosive">
+                <explosiveRadius>3</explosiveRadius>
+                <wickTicks>240</wickTicks>
+                <explosiveDamageType>Bomb</explosiveDamageType>
+            </li>
+        </comps>
+    </ThingDef>
+
+    <!-- use these for things with shells :3-->
+    <ThingDef Name="TEFNUT_MannedCannonBaseWithShells" ParentName="TEFNUT_MannedCannonBase" Abstract="True">
+        <inspectorTabs>
+            <li>ITab_Shells</li>
+        </inspectorTabs>
+    </ThingDef>
+    <ThingDef Name="TEFNUT_AutomatedCannonBaseWithShells" ParentName="TEFNUT_AutomatedCannonBase" Abstract="True">
+        <inspectorTabs>
+            <li>ITab_Shells</li>
+        </inspectorTabs>
+    </ThingDef>
+
+    <!-- these are for turrets-->
+    <ThingDef Name="TEFNUT_MultiShellTurret" Abstract="True">
+        <category>Item</category>
+        <thingClass>ThingWithComps</thingClass>
+        <label>artillery error</label>
+        <useHitPoints>false</useHitPoints>
+        <equipmentType>Primary</equipmentType>
+        <tickerType>Never</tickerType>
+        <techLevel>Industrial</techLevel>
+        <destroyOnDrop>True</destroyOnDrop>
+        <tradeability>None</tradeability>
+        <weaponTags Inherit="false">
+            <li>TurretGun</li>
+        </weaponTags>
+        <comps>
+            <li>
+                <compClass>CompEquippable</compClass>
+            </li>
+            <li Class="CompProperties_ChangeableProjectile" />
+        </comps>
+    </ThingDef>
+    <ThingDef Name="TEFNUT_SingleShellTurret" ParentName="BaseWeaponTurret" Abstract="True">
+        <statBases>
+            <DeteriorationRate>0</DeteriorationRate>
+            <Mass>40</Mass>
+            <Flammability>0</Flammability>
+        </statBases>
+    </ThingDef>
+
+</Defs>

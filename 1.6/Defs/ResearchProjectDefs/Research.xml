@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <ResearchProjectDef>
+        <defName>TEFNUT_HeavyEmplacements</defName>
+        <label>Heavy emplacements</label>
+        <description>Unlocks a variety of heavy manned weapons, ideal for usage against heavy targets or large stationary crowds.</description>
+        <baseCost>4000</baseCost>
+        <techLevel>Industrial</techLevel>
+        <prerequisites>
+            <li>Mortars</li>
+        </prerequisites>
+        <researchViewX>1</researchViewX>
+        <researchViewY>1</researchViewY>
+        <tab>TEFNUT_MoreCannonsResearchTab</tab>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>TEFNUT_BattleshipWeaponry</defName>
+        <label>Battleship weaponry</label>
+        <description>Unlocks expensive, incredibly heavy weapons, ideal for use on heavy weapons platforms and gravships.</description>
+        <baseCost>8000</baseCost>
+        <techLevel>Industrial</techLevel>
+        <prerequisites>
+            <li>TEFNUT_HeavyEmplacements</li>
+        </prerequisites>
+        <researchViewX>2</researchViewX>
+        <researchViewY>1</researchViewY>
+        <tab>TEFNUT_MoreCannonsResearchTab</tab>
+    </ResearchProjectDef>
+
+    <ResearchProjectDef>
+        <defName>TEFNUT_FireControlSystems</defName>
+        <label>Fire control systems</label>
+        <description>Unlocks automated versions of heavy emplacements and, if researched, battleship weaponry.</description>
+        <baseCost>8000</baseCost>
+        <techLevel>Spacer</techLevel>
+        <prerequisites>
+            <li>TEFNUT_HeavyEmplacements</li>
+            <li>Fabrication</li>
+        </prerequisites>
+        <researchViewX>1</researchViewX>
+        <researchViewY>2</researchViewY>
+        <tab>TEFNUT_MoreCannonsResearchTab</tab>
+    </ResearchProjectDef>
+
+</Defs>
