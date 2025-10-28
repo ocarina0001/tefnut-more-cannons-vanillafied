@@ -174,7 +174,7 @@
                         <li>TEFNUT_6PoundCannonShell</li>
                     </thingDefs>
                 </fuelFilter>
-                <fuelCapacity>1</fuelCapacity>
+                <fuelCapacity>30</fuelCapacity>
                 <initialFuelPercent>0</initialFuelPercent>
                 <autoRefuelPercent>1</autoRefuelPercent>
                 <showFuelGizmo>true</showFuelGizmo>
@@ -265,6 +265,7 @@
                 <range>69.9</range>
                 <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
                 <burstShotCount>1</burstShotCount>
+                <defaultProjectile>TEFNUT_Bullet_6PoundCannon</defaultProjectile>
                 <soundCast>TEFNUT_Sound_6PoundCannon</soundCast>
                 <muzzleFlashScale>40</muzzleFlashScale>
                 <requireLineOfSight>true</requireLineOfSight>
@@ -345,7 +346,7 @@
                         <li>TEFNUT_HeavyMortarShell</li>
                     </thingDefs>
                 </fuelFilter>
-                <fuelCapacity>1</fuelCapacity>
+                <fuelCapacity>8</fuelCapacity>
                 <initialFuelPercent>0</initialFuelPercent>
                 <autoRefuelPercent>1</autoRefuelPercent>
                 <showFuelGizmo>true</showFuelGizmo>
@@ -443,6 +444,7 @@
                 <verbClass>Verb_Shoot</verbClass>
                 <hasStandardCommand>true</hasStandardCommand>
                 <warmupTime>1</warmupTime>
+                <defaultProjectile>TEFNUT_Bullet_HeavyMortar</defaultProjectile>
                 <minRange>14.9</minRange>
                 <range>149.9</range>
                 <ticksBetweenBurstShots>0</ticksBetweenBurstShots>
@@ -525,7 +527,7 @@
                         <li>TEFNUT_HeavyArtilleryShell</li>
                     </thingDefs>
                 </fuelFilter>
-                <fuelCapacity>1</fuelCapacity>
+                <fuelCapacity>30</fuelCapacity>
                 <initialFuelPercent>0</initialFuelPercent>
                 <autoRefuelPercent>1</autoRefuelPercent>
                 <showFuelGizmo>true</showFuelGizmo>
